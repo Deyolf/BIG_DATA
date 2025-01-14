@@ -43,7 +43,7 @@ $_95_99_flt = $_GET["_95_99_flt"];
 $_100_flt = $_GET["_100_flt"];
 
 //db filepath definition
-$json_file = __DIR__ . '../db/db.json';
+$json_file = __DIR__ . '/db/db.json';
 
 //filtrage start
 if (!file_exists($json_file)) {
