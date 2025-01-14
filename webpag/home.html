@@ -8,39 +8,69 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
+<style>
+  body {
+    background: radial-gradient(circle, #901010, #073f7a);
+    animation: gradient-animation 15s ease infinite;
+    background-size: 400% 400%;
+    height: 100%;
+  }
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55); /* Dark semi-transparent overlay */
+    z-index: -1; /* Ensure it's placed behind all content */
+  }
+  @keyframes gradient-animation {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+  }
+  .table-responsive {
+    margin-bottom: 40px; /* Space below the table */
+  }
+
+  #table {
+    margin-top: 20px;
+  }
+
+  .button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  button {
+    margin: 0 10px;
+  }
+
+  .col {
+    padding: 8px;
+  }
+
+  /* Aggiungi questo stile per evitare che il testo vada a capo */
+  .table th, .table td {
+    white-space: nowrap;
+  }
+
+  /* Impostare larghezza minima per le colonne per evitare che si riducano troppo */
+  .table th, .table td {
+    min-width: 70px;
+  }
+</style>
+
 <body>
-  <button onclick="previous_page()">previous page</button>
-  <button onclick="next_page()">next page</button>
-  <div id="numpag"></div>
-  <div class="container my-5" id="table">
-    <div class="row text-center bg-primary text-white fw-bold">
-      <div class="col">Anno</div>
-      <div class="col">Cittadinanza</div>
-      <div class="col">Genere</div>
-      <div class="col">Quartiere</div>
-      <div class="col">0</div>
-      <div class="col">01-04</div>
-      <div class="col">05-09</div>
-      <div class="col">10-14</div>
-      <div class="col">15-19</div>
-      <div class="col">20-24</div>
-      <div class="col">25-29</div>
-      <div class="col">30-34</div>
-      <div class="col">35-39</div>
-      <div class="col">40-44</div>
-      <div class="col">45-49</div>
-      <div class="col">50-54</div>
-      <div class="col">55-59</div>
-      <div class="col">60-64</div>
-      <div class="col">65-69</div>
-      <div class="col">70-74</div>
-      <div class="col">75-79</div>
-      <div class="col">80-84</div>
-      <div class="col">85-89</div>
-      <div class="col">90-94</div>
-      <div class="col">95-99</div>
-      <div class="col">100 e oltre</div>
-    </div>
+  <div class=" my-5" id="table">
+  </div>
+
+  <!-- Pagination Buttons -->
+  <div class="container my-5 button-container">
+    <button class="btn btn-primary" onclick="previous_page()">Previous Page</button>
+    <button class="btn btn-primary" onclick="next_page()">Next Page</button>
+    <div id="numpag"></div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
