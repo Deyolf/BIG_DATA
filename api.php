@@ -65,8 +65,11 @@ $json_content = file_get_contents($json_file);
 
 
 //generating output
-if ($nmr_pag && $pag_dmn) {
 
+if ($nmr_pag) {
+    if (!$pag_dmn){
+        $pag_dmn = 50;
+    }
     $offset = ($nmr_pag - 1) * $pag_dmn;
     $last = $nmr_pag * $pag_dmn;
 
