@@ -10,12 +10,12 @@ header('Content-Type: application/json');
 $nmr_pag = $_GET["nmr_pag"];
 $pag_dmn = $_GET["pag_dmn"];
 //data related
-//gender
-$gnr_flt = $_GET["gnr_flt"];
 //year
 $yre_flt = $_GET["yre_flt"];
 //citizenship
 $ctt_flt = $_GET["ctt_flt"];
+//gender
+$gnr_flt = $_GET["gnr_flt"];
 //quartier
 $qrt_flt = $_GET["qrt_flt"];
 //age groups
@@ -62,23 +62,32 @@ function end_out($data = "")
 $data_output = "";
 $dataset_last = 3693;
 $json_content = file_get_contents($json_file);
+$json_object = json_decode($json_content);
+
+var_dump($json_object);
+var_dump($json_content);
 
 
 //generating output
+if ($yre_flt) {
+    $items_block = array_filter($json_object->items, function (Item $item) use ($yre_flt) {
+        var_dump($item); // Debug: stampa l'elemento corrente
+        return $item->anno == $yre_flt;
+    });
 
-if ($nmr_pag) {
-    if (!$pag_dmn){
+    $data_output = json_encode($items_block);
+} 
+else if ($nmr_pag) {
+    if (!$pag_dmn) {
         $pag_dmn = 50;
     }
     $offset = ($nmr_pag - 1) * $pag_dmn;
-    $last = $nmr_pag * $pag_dmn;
 
-    if ($last > $dataset_last) {
-        $last = $dataset_last;
+    if ($pag_dmn * $nmr_pag > $dataset_last) {
+        $pag_dmn = $dataset_last - $pag_dmn * $nmr_pag;
     }
 
-    $json_object = json_decode($json_content);
-    $items_block = array_slice($json_object, $offset, $last);
+    $items_block = array_slice($json_object, $offset, $pag_dmn);
 
     $data_output = json_encode($items_block);
 
