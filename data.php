@@ -64,16 +64,28 @@ $dataset_last = 3693;
 $json_content = file_get_contents($json_file);
 $json_object = json_decode($json_content);
 
-var_dump($json_object);
-var_dump($json_content);
+//echo json_encode($json_object);
+//var_dump($json_content);
 
 
 //generating output
+$items_block=$json_object;
 if ($yre_flt) {
-    $items_block = array_filter($json_object->items, function (Item $item) use ($yre_flt) {
-        var_dump($item); // Debug: stampa l'elemento corrente
-        return $item->anno == $yre_flt;
-    });
+$a=null;
+    for ($i =0;$i<count($items_block);$i++){
+    //echo json_encode($json_object["anno"]);
+    //echo json_encode($json_object[$i]);
+    //echo $yre_flt;
+    //echo json_encode($items_block[$i]->anno);
+    
+    if ($items_block[$i]->anno==$yre_flt){
+
+// remove the first element and only remove one element
+array_push($a, $items_block[$i]);
+
+}
+}
+$item_block=$a;
 
     $data_output = json_encode($items_block);
 } 
