@@ -69,28 +69,22 @@ $json_object = json_decode($json_content);
 
 
 //generating output
-$items_block=$json_object;
-if ($yre_flt) {
-$a=null;
-    for ($i =0;$i<count($items_block);$i++){
-    //echo json_encode($json_object["anno"]);
-    //echo json_encode($json_object[$i]);
-    //echo $yre_flt;
-    //echo json_encode($items_block[$i]->anno);
-    
-    if ($items_block[$i]->anno==$yre_flt){
+$items_block = $json_object;
 
-// remove the first element and only remove one element
-array_push($a, $items_block[$i]);
-
-}
-}
-$item_block=$a;
+if ($yre_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->anno == $yre_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
 
     $data_output = json_encode($items_block);
-} 
-else if ($nmr_pag) {
-    if (!$pag_dmn) {
+
+}
+if ($nmr_pag != null) {
+    if ($pag_dmn == null) {
         $pag_dmn = 50;
     }
     $offset = ($nmr_pag - 1) * $pag_dmn;
@@ -99,12 +93,12 @@ else if ($nmr_pag) {
         $pag_dmn = $dataset_last - $pag_dmn * $nmr_pag;
     }
 
-    $items_block = array_slice($json_object, $offset, $pag_dmn);
+    $items_block = array_slice($items_block, $offset, $pag_dmn);
 
     $data_output = json_encode($items_block);
 
 } else {
-    $data_output = $json_content;
+    $data_output = json_encode($items_block);
 }
 
 end_out($data_output);

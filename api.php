@@ -64,21 +64,27 @@ $dataset_last = 3693;
 $json_content = file_get_contents($json_file);
 $json_object = json_decode($json_content);
 
-var_dump($json_object);
-var_dump($json_content);
+//echo json_encode($json_object);
+//var_dump($json_content);
 
 
 //generating output
-if ($yre_flt) {
-    $items_block = array_filter($json_object->items, function (Item $item) use ($yre_flt) {
-        var_dump($item); // Debug: stampa l'elemento corrente
-        return $item->anno == $yre_flt;
-    });
+$items_block = $json_object;
+
+if ($yre_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->anno == $yre_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
 
     $data_output = json_encode($items_block);
-} 
-else if ($nmr_pag) {
-    if (!$pag_dmn) {
+
+}
+if ($nmr_pag != null) {
+    if ($pag_dmn == null) {
         $pag_dmn = 50;
     }
     $offset = ($nmr_pag - 1) * $pag_dmn;
@@ -87,12 +93,12 @@ else if ($nmr_pag) {
         $pag_dmn = $dataset_last - $pag_dmn * $nmr_pag;
     }
 
-    $items_block = array_slice($json_object, $offset, $pag_dmn);
+    $items_block = array_slice($items_block, $offset, $pag_dmn);
 
     $data_output = json_encode($items_block);
 
 } else {
-    $data_output = $json_content;
+    $data_output = json_encode($items_block);
 }
 
 end_out($data_output);
