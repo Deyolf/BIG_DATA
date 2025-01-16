@@ -83,6 +83,30 @@ if ($yre_flt != null) {
     $data_output = json_encode($items_block);
 
 }
+if ($ctt_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->cittadinanza == $ctt_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($gnr_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->genere == $gnr_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
 if ($nmr_pag != null) {
     if ($pag_dmn == null) {
         $pag_dmn = 50;
