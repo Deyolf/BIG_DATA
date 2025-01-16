@@ -36,6 +36,7 @@
 
   #table {
     margin-top: 20px;
+    background: transparent;
   }
 
   .button-container {
@@ -60,9 +61,177 @@
   .table th, .table td {
     min-width: 70px;
   }
+  .td {
+   background: transparent; 
+   border: none;
+  }
+
 </style>
 
 <body>
+  <nav class="navbar bg-body-tertiary fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+           
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Genere
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Maschio</a></li>
+                <li><a class="dropdown-item" href="#">Femmina</a></li>          
+              </ul>
+            </li>
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Cittadinanza
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Italiano</a></li>
+              <li><a class="dropdown-item" href="#">Straniero</a></li>          
+            </ul>
+          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Età
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">0</a></li>
+                <li><a class="dropdown-item" href="#">01-04</a></li>
+                <li><a class="dropdown-item" href="#">05-09</a></li>
+                <li><a class="dropdown-item" href="#">10-14</a></li>
+                <li><a class="dropdown-item" href="#">15-19</a></li>
+                <li><a class="dropdown-item" href="#">20-24</a></li>
+                <li><a class="dropdown-item" href="#">25-29</a></li>
+                <li><a class="dropdown-item" href="#">30-34</a></li>
+                <li><a class="dropdown-item" href="#">35-39</a></li>
+                <li><a class="dropdown-item" href="#">40-44</a></li>
+                <li><a class="dropdown-item" href="#">45-49</a></li>
+                <li><a class="dropdown-item" href="#">50-54</a></li>
+                <li><a class="dropdown-item" href="#">55-59</a></li>
+                <li><a class="dropdown-item" href="#">60-64</a></li>
+                <li><a class="dropdown-item" href="#">65-69</a></li>
+                <li><a class="dropdown-item" href="#">70-74</a></li>
+                <li><a class="dropdown-item" href="#">75-79</a></li>
+                <li><a class="dropdown-item" href="#">80-84</a></li>
+                <li><a class="dropdown-item" href="#">85-89</a></li>
+                <li><a class="dropdown-item" href="#">90-94</a></li>
+                <li><a class="dropdown-item" href="#">95-99</a></li>
+                <li><a class="dropdown-item" href="#">100+</a></li>          
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Anno
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">1987</a></li>
+                  <li><a class="dropdown-item" href="#">1988</a></li>
+                  <li><a class="dropdown-item" href="#">1989</a></li>
+                  <li><a class="dropdown-item" href="#">1990</a></li>
+                  <li><a class="dropdown-item" href="#">1991</a></li>
+                  <li><a class="dropdown-item" href="#">1992</a></li>
+                  <li><a class="dropdown-item" href="#">1993</a></li>
+                  <li><a class="dropdown-item" href="#">1994</a></li>
+                  <li><a class="dropdown-item" href="#">1995</a></li>
+                  <li><a class="dropdown-item" href="#">1996</a></li>
+                  <li><a class="dropdown-item" href="#">1997</a></li>
+                  <li><a class="dropdown-item" href="#">1998</a></li>
+                  <li><a class="dropdown-item" href="#">1999</a></li>
+                  <li><a class="dropdown-item" href="#">2000</a></li>
+                  <li><a class="dropdown-item" href="#">2001</a></li>
+                  <li><a class="dropdown-item" href="#">2002</a></li>
+                  <li><a class="dropdown-item" href="#">2003</a></li>
+                  <li><a class="dropdown-item" href="#">2004</a></li>
+                  <li><a class="dropdown-item" href="#">2005</a></li>
+                  <li><a class="dropdown-item" href="#">2006</a></li>
+                  <li><a class="dropdown-item" href="#">2007</a></li>
+                  <li><a class="dropdown-item" href="#">2008</a></li>
+                  <li><a class="dropdown-item" href="#">2009</a></li>
+                  <li><a class="dropdown-item" href="#">2010</a></li>
+                  <li><a class="dropdown-item" href="#">2011</a></li>
+                  <li><a class="dropdown-item" href="#">2012</a></li>
+                  <li><a class="dropdown-item" href="#">2013</a></li>
+                  <li><a class="dropdown-item" href="#">2014</a></li>
+                  <li><a class="dropdown-item" href="#">2015</a></li>
+                  <li><a class="dropdown-item" href="#">2016</a></li>
+                  <li><a class="dropdown-item" href="#">2017</a></li>
+                  <li><a class="dropdown-item" href="#">2018</a></li>
+                  <li><a class="dropdown-item" href="#">2019</a></li>
+                  <li><a class="dropdown-item" href="#">2020</a></li>
+                  <li><a class="dropdown-item" href="#">2021</a></li>
+                  <li><a class="dropdown-item" href="#">2022</a></li>
+                  <li><a class="dropdown-item" href="#">2023</a></li>         
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Quartiere
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Maschio</a></li>
+                <li><a class="dropdown-item" href="#">Femmina</a></li>
+                <li><a class="dropdown-item" href="#">Maschio</a></li>
+                <li><a class="dropdown-item" href="#">Femmina</a></li>
+                <li><a class="dropdown-item" href="#">Maschio</a></li>
+                <li><a class="dropdown-item" href="#">Femmina</a></li>
+                <li><a class="dropdown-item" href="#">Maschio</a></li>
+                <li><a class="dropdown-item" href="#">Femmina</a></li>
+                <li><a class="dropdown-item" href="#">Maschio</a></li>
+                <li><a class="dropdown-item" href="#">Femmina</a></li>
+                <li><a class="dropdown-item" href="#">Maschio</a></li>
+                <li><a class="dropdown-item" href="#">Femmina</a></li>
+                <li><a class="dropdown-item" href="#">Maschio</a></li>
+                <li><a class="dropdown-item" href="#">Femmina</a></li>
+                <li><a class="dropdown-item" href="#">Maschio</a></li>
+                <li><a class="dropdown-item" href="#">Femmina</a></li>
+                <li><a class="dropdown-item" href="#">Maschio</a></li>
+                <li><a class="dropdown-item" href="#">Femmina</a></li>
+                <li><a class="dropdown-item" href="#">Maschio</a></li>
+                <li><a class="dropdown-item" href="#">Femmina</a></li>
+                <li><a class="dropdown-item" href="#">Maschio</a></li>
+                <li><a class="dropdown-item" href="#">Femmina</a></li>          
+              </ul>
+            </li>
+
+
+
+          </ul>    
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+
+
+
+
+  <div id="mainCard" class="card p-3" style="width: 20rem; display: none;">
+    <h5 class="card-title">Filters</h5>
+    <div class="d-grid gap-2">
+      <button class="btn btn-primary">Filter 1</button>
+      <button class="btn btn-primary">Filter 2</button>
+      <button class="btn btn-primary">Filter 3</button>
+      <button class="btn btn-primary">Filter 4</button>
+      <button id="openAgeCard" class="btn btn-primary">Age</button>
+    </div>
+  </div>
+
+
+
   <div class=" my-5" id="table">
   </div>
 

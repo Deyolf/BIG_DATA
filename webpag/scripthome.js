@@ -7,7 +7,7 @@ function load_data(a) {
     <div class="table-responsive">
       <table class="table table-bordered">
         <thead class="text-center bg-primary text-white fw-bold">
-          <tr>
+          <tr >
             <th>Anno</th>
             <th>Cittadinanza</th>
             <th>Genere</th>
@@ -53,33 +53,33 @@ function load_data(a) {
       // Aggiungi le righe dinamicamente
       data.forEach(ele => {
         const row = `
-          <tr class="text-center">
-            <td>${ele.anno}</td>
-            <td>${ele.cittadinanza}</td>
-            <td>${ele.genere}</td>
-            <td>${ele.quartiere}</td>
-            <td>${ele._0}</td>
-            <td>${ele._01_04}</td>
-            <td>${ele._05_09}</td>
-            <td>${ele._10_14}</td>
-            <td>${ele._15_19}</td>
-            <td>${ele._20_24}</td>
-            <td>${ele._25_29}</td>
-            <td>${ele._30_34}</td>
-            <td>${ele._35_39}</td>
-            <td>${ele._40_44}</td>
-            <td>${ele._45_49}</td>
-            <td>${ele._50_54}</td>
-            <td>${ele._55_59}</td>
-            <td>${ele._60_64}</td>
-            <td>${ele._65_69}</td>
-            <td>${ele._70_74}</td>
-            <td>${ele._75_79}</td>
-            <td>${ele._80_84}</td>
-            <td>${ele._85_89}</td>
-            <td>${ele._90_94}</td>
-            <td>${ele._95_99}</td>
-            <td>${ele._100_oltre}</td>
+          <tr class="text-center" style="background: transparent; border: none;">
+          <td style="background: transparent; border: none; color: white;">${ele.anno}</td>
+            <td style="background: transparent; border: none; color: white;">${ele.cittadinanza}</td>
+            <td style="background: transparent; border: none; color: white;">${ele.genere}</td>
+            <td style="background: transparent; border: none; color: white;">${ele.quartiere}</td>
+            <td style="background: transparent; border: none; color: white;">${ele._0}</td>
+            <td style="background: transparent; border: none; color: white;">${ele._01_04}</td>
+            <td style="background: transparent; border: none; color: white;">${ele._05_09}</td>
+            <td style="background: transparent; border: none; color: white;">${ele._10_14}</td>
+            <td style="background: transparent; border: none; color: white;">${ele._15_19}</td>
+            <td style="background: transparent; border: none; color: white;">${ele._20_24}</td>
+            <td style="background: transparent; border: none; color: white;">${ele._25_29}</td>
+            <td style="background: transparent; border: none; color: white;">${ele._30_34}</td>
+            <td style="background: transparent; border: none; color: white;">${ele._35_39}</td>
+            <td style="background: transparent; border: none; color: white;">${ele._40_44}</td>
+            <td style="background: transparent; border: none; color: white;">${ele._45_49}</td>
+            <td style="background: transparent; border: none; color: white;">${ele._50_54}</td>
+            <td style="background: transparent; border: none; color: white;">${ele._55_59}</td>
+            <td style="background: transparent; border: none; color: white;">${ele._60_64}</td>
+            <td style="background: transparent; border: none; color: white;">${ele._65_69}</td>
+            <td style="background: transparent; border: none; color: white;">${ele._70_74}</td>
+            <td style="background: transparent; border: none; color: white;">${ele._75_79}</td>
+            <td style="background: transparent; border: none; color: white;">${ele._80_84}</td>
+            <td style="background: transparent; border: none; color: white;">${ele._85_89}</td>
+            <td style="background: transparent; border: none; color: white;">${ele._90_94}</td>
+            <td style="background: transparent; border: none; color: white;">${ele._95_99}</td>
+            <td style="background: transparent; border: none; color: white;">${ele._100_oltre}</td>
           </tr>
         `;
         // Aggiungi la riga al corpo della tabella
