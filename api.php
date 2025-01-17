@@ -83,6 +83,306 @@ if ($yre_flt != null) {
     $data_output = json_encode($items_block);
 
 }
+if ($ctt_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->cittadinanza == $ctt_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($gnr_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->genere == $gnr_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($qrt_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->quartiere == $qrt_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($_0_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->_0 == $_0_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($_01_04_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->_01_04 == $_01_04_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($_05_09_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->_05_09 == $_05_09_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($_10_14_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->_10_14 == $_10_14_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($_15_19_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->_15_19 == $_15_19_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($_20_24_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->_20_24 == $_20_24_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($_25_29_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->_25_29 == $_25_29_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($_30_34_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->_30_34 == $_30_34_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($_35_39_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->_35_39 == $_35_39_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($_40_44_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->_40_44 == $_40_44_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($_45_49_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->_45_49 == $_45_49_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($_50_54_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->_50_54 == $_50_54_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($_55_59_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->_55_59 == $_55_59_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($_60_64_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->_60_64 == $_60_64_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($_65_69_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->_65_69 == $_65_69_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($_70_74_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->_70_74 == $_70_74_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($_75_79_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->_75_79 == $_75_79_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($_80_84_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->_80_84 == $_80_84_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($_85_89_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->_85_89 == $_85_89_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($_90_94_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->_90_94 == $_90_94_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($_95_99_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->_95_99 == $_95_99_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
+if ($_100_flt != null) {
+    $a = null;
+    for ($i = 0; $i < count($items_block); $i++) {
+        if ($items_block[$i]->_100_oltre == $_100_flt) {
+            $a[] = $items_block[$i];
+        }
+    }
+    $items_block = $a;
+
+    $data_output = json_encode($items_block);
+
+}
 if ($nmr_pag != null) {
     if ($pag_dmn == null) {
         $pag_dmn = 50;
