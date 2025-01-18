@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tabella con Div e Bootstrap</title>
+  <title>Big-Data Residenti Bergamo</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <style>
   body {
-    background: radial-gradient(circle, #901010, #073f7a);
+    background: radial-gradient(circle, #1d1d1d, #555555); /*#901010, #073f7a*/
     animation: gradient-animation 15s ease infinite;
     background-size: 400% 400%;
     height: 100%;
@@ -66,18 +66,70 @@
    border: none;
   }
 
+    .navbar .container-fluid > *:not(.navbar-toggler) {
+        display: none;
+      }
+
+    /* Nascondere bordi e lo sfondo della navbar */
+    .navbar {
+      background-color: transparent !important;
+      border: none !important;
+    }
+
+    /*l'offcanvas visibile */
+    .offcanvas {
+      display: block !important;
+      visibility: visible !important;
+    }
+    .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.table-reduced {
+  transform: scale(0.94);  /* Riduce la dimensione della tabella */
+  transform-origin: top left;
+  width: 100%; /* Imposta la larghezza della tabella al 100% del contenitore */
+}
+
+.table-responsive {
+  overflow-x: hidden;  /* Nasconde la barra di scorrimento orizzontale */
+}
+
+.btn-light {
+  background-color: white; /* Sfondo bianco */
+  color: #333; /* Colore del testo scuro */
+  border: 1px solid #ccc; /* Aggiungi un bordo grigio chiaro */
+}
+
+.btn-light:hover {
+  background-color: #f8f9fa; /* Colore di sfondo più chiaro quando hover */
+  border-color: #bbb; /* Bordo più scuro in hover */
+}
+
+#numpag {
+  font-size: 16px; /* Regola la dimensione del font per il numero */
+  padding: 10px 20px; /* Dà un po' di padding per allinearlo con i pulsanti */
+    color: #333; /* Colore del testo scuro */
+}
+
+
 </style>
 
 <body>
+ 
   <nav class="navbar bg-body-tertiary fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <!-- Titolo BIG DATA a sinistra -->
+        <a class="navbar-brand text-white" style="display: inline-block; z-index: 1;">Residenti Bergamo</a>
+
+        <!-- Spaziatura corretta per allineare il pulsante a destra -->
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Filtri</h5>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -88,8 +140,8 @@
                 Genere
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Maschio</a></li>
-                <li><a class="dropdown-item" href="#">Femmina</a></li>          
+                <li><a class="dropdown-item" onclick="setGenere('Maschio')">Maschio</a></li>
+                <li><a class="dropdown-item" onclick="setGenere('Femmina')">Femmina</a></li>          
               </ul>
             </li>
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -134,43 +186,43 @@
                 Anno
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">1987</a></li>
-                  <li><a class="dropdown-item" href="#">1988</a></li>
-                  <li><a class="dropdown-item" href="#">1989</a></li>
-                  <li><a class="dropdown-item" href="#">1990</a></li>
-                  <li><a class="dropdown-item" href="#">1991</a></li>
-                  <li><a class="dropdown-item" href="#">1992</a></li>
-                  <li><a class="dropdown-item" href="#">1993</a></li>
-                  <li><a class="dropdown-item" href="#">1994</a></li>
-                  <li><a class="dropdown-item" href="#">1995</a></li>
-                  <li><a class="dropdown-item" href="#">1996</a></li>
-                  <li><a class="dropdown-item" href="#">1997</a></li>
-                  <li><a class="dropdown-item" href="#">1998</a></li>
-                  <li><a class="dropdown-item" href="#">1999</a></li>
-                  <li><a class="dropdown-item" href="#">2000</a></li>
-                  <li><a class="dropdown-item" href="#">2001</a></li>
-                  <li><a class="dropdown-item" href="#">2002</a></li>
-                  <li><a class="dropdown-item" href="#">2003</a></li>
-                  <li><a class="dropdown-item" href="#">2004</a></li>
-                  <li><a class="dropdown-item" href="#">2005</a></li>
-                  <li><a class="dropdown-item" href="#">2006</a></li>
-                  <li><a class="dropdown-item" href="#">2007</a></li>
-                  <li><a class="dropdown-item" href="#">2008</a></li>
-                  <li><a class="dropdown-item" href="#">2009</a></li>
-                  <li><a class="dropdown-item" href="#">2010</a></li>
-                  <li><a class="dropdown-item" href="#">2011</a></li>
-                  <li><a class="dropdown-item" href="#">2012</a></li>
-                  <li><a class="dropdown-item" href="#">2013</a></li>
-                  <li><a class="dropdown-item" href="#">2014</a></li>
-                  <li><a class="dropdown-item" href="#">2015</a></li>
-                  <li><a class="dropdown-item" href="#">2016</a></li>
-                  <li><a class="dropdown-item" href="#">2017</a></li>
-                  <li><a class="dropdown-item" href="#">2018</a></li>
-                  <li><a class="dropdown-item" href="#">2019</a></li>
-                  <li><a class="dropdown-item" href="#">2020</a></li>
-                  <li><a class="dropdown-item" href="#">2021</a></li>
-                  <li><a class="dropdown-item" href="#">2022</a></li>
-                  <li><a class="dropdown-item" href="#">2023</a></li>         
+                  <li><a class="dropdown-item" onclick="setAnno(1987)">1987</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(1988)">1988</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(1989)">1989</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(1990)">1990</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(1991)">1991</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(1992)">1992</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(1993)">1993</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(1994)">1994</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(1995)">1995</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(1996)">1996</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(1997)">1997</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(1998)">1998</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(1999)">1999</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(2000)">2000</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(2001)">2001</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(2002)">2002</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(2003)">2003</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(2004)">2004</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(2005)">2005</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(2006)">2006</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(2007)">2007</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(2008)">2008</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(2009)">2009</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(2010)">2010</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(2011)">2011</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(2012)">2012</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(2013)">2013</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(2014)">2014</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(2015)">2015</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(2016)">2016</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(2017)">2017</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(2018)">2018</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(2019)">2019</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(2020)">2020</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(2021)">2021</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(2022)">2022</a></li>
+                  <li><a class="dropdown-item" onclick="setAnno(2023)">2023</a></li>     
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -178,46 +230,42 @@
                 Quartiere
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Maschio</a></li>
-                <li><a class="dropdown-item" href="#">Femmina</a></li>
-                <li><a class="dropdown-item" href="#">Maschio</a></li>
-                <li><a class="dropdown-item" href="#">Femmina</a></li>
-                <li><a class="dropdown-item" href="#">Maschio</a></li>
-                <li><a class="dropdown-item" href="#">Femmina</a></li>
-                <li><a class="dropdown-item" href="#">Maschio</a></li>
-                <li><a class="dropdown-item" href="#">Femmina</a></li>
-                <li><a class="dropdown-item" href="#">Maschio</a></li>
-                <li><a class="dropdown-item" href="#">Femmina</a></li>
-                <li><a class="dropdown-item" href="#">Maschio</a></li>
-                <li><a class="dropdown-item" href="#">Femmina</a></li>
-                <li><a class="dropdown-item" href="#">Maschio</a></li>
-                <li><a class="dropdown-item" href="#">Femmina</a></li>
-                <li><a class="dropdown-item" href="#">Maschio</a></li>
-                <li><a class="dropdown-item" href="#">Femmina</a></li>
-                <li><a class="dropdown-item" href="#">Maschio</a></li>
-                <li><a class="dropdown-item" href="#">Femmina</a></li>
-                <li><a class="dropdown-item" href="#">Maschio</a></li>
-                <li><a class="dropdown-item" href="#">Femmina</a></li>
-                <li><a class="dropdown-item" href="#">Maschio</a></li>
-                <li><a class="dropdown-item" href="#">Femmina</a></li>          
+                <li><a class="dropdown-item" href="#">BOCCALEONE</a></li>
+                <li><a class="dropdown-item" href="#">BORGO PALAZZO</a></li>
+                <li><a class="dropdown-item" href="#">CAMPAGNOLA</a></li>
+                <li><a class="dropdown-item" href="#">CARNOVALI</a></li>
+                <li><a class="dropdown-item" href="#">CELADINA</a></li>
+                <li><a class="dropdown-item" href="#">CENTRO - Papa Giovanni XXIII</a></li>
+                <li><a class="dropdown-item" href="#">CENTRO - Pignolo	</a></li>
+                <li><a class="dropdown-item" href="#">CENTRO - S.Alessandro	</a></li>
+                <li><a class="dropdown-item" href="#">CITTA' ALTA	</a></li>
+                <li><a class="dropdown-item" href="#">COLLI</a></li>
+                <li><a class="dropdown-item" href="#">COLOGNOLA</a></li>
+                <li><a class="dropdown-item" href="#">CONCA FIORITA</a></li>
+                <li><a class="dropdown-item" href="#">GRUMELLO</a></li>
+                <li><a class="dropdown-item" href="#">LONGUELO</a></li>
+                <li><a class="dropdown-item" href="#">LORETO</a></li>
+                <li><a class="dropdown-item" href="#">MALPENSATA</a></li>
+                <li><a class="dropdown-item" href="#">MONTEROSSO</a></li>
+                <li><a class="dropdown-item" href="#">REDONA</a></li>
+                <li><a class="dropdown-item" href="#">S.CATERINA</a></li>
+                <li><a class="dropdown-item" href="#">S.LUCIA</a></li>
+                <li><a class="dropdown-item" href="#">S.PAOLO</a></li>
+                <li><a class="dropdown-item" href="#">S.TOMMASO</a></li>
+                <li><a class="dropdown-item" href="#">VALTESSE (S.Colombano) </a></li>     
+                <li><a class="dropdown-item" href="#">VALVERDE - VALTESSE (S.Antonio)</a></li>     
+                <li><a class="dropdown-item" href="#">VILLAGGIO SPOSI</a></li>               
               </ul>
             </li>
 
-
+            <button class="btn btn-danger" onclick="resetFiltri()">Rimuovi Filtri</button>
 
           </ul>    
+          
         </div>
       </div>
     </div>
   </nav>
-
-
-
-
-
-
-
-
 
   <div id="mainCard" class="card p-3" style="width: 20rem; display: none;">
     <h5 class="card-title">Filters</h5>
@@ -230,17 +278,17 @@
     </div>
   </div>
 
-
+<p>spaziatura</p>
 
   <div class=" my-5" id="table">
   </div>
 
-  <!-- Pagination Buttons -->
   <div class="container my-5 button-container">
-    <button class="btn btn-primary" onclick="previous_page()">Previous Page</button>
-    <button class="btn btn-primary" onclick="next_page()">Next Page</button>
+    <button class="btn btn-light text-dark" onclick="previous_page()">Previous Page</button>
+    <div id="numpag" class="btn btn-light text-dark mx-2"></div>
+    <button class="btn btn-light text-dark" onclick="next_page()">Next Page</button>
     <div id="numpag"></div>
-  </div>
+</div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="scripthome.js"></script>
