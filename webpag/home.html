@@ -112,7 +112,6 @@
     color: #333; /* Colore del testo scuro */
 }
 
-
 </style>
 
 <body>
@@ -148,8 +147,8 @@
               Cittadinanza
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Italiano</a></li>
-              <li><a class="dropdown-item" href="#">Straniero</a></li>          
+              <li><a class="dropdown-item" onclick="setCtt('Italiani')">Italiano</a></li>
+              <li><a class="dropdown-item" onclick="setCtt('Stranieri')">Straniero</a></li>          
             </ul>
           </li>
             <li class="nav-item dropdown">
@@ -230,35 +229,72 @@
                 Quartiere
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">BOCCALEONE</a></li>
-                <li><a class="dropdown-item" href="#">BORGO PALAZZO</a></li>
-                <li><a class="dropdown-item" href="#">CAMPAGNOLA</a></li>
-                <li><a class="dropdown-item" href="#">CARNOVALI</a></li>
-                <li><a class="dropdown-item" href="#">CELADINA</a></li>
-                <li><a class="dropdown-item" href="#">CENTRO - Papa Giovanni XXIII</a></li>
-                <li><a class="dropdown-item" href="#">CENTRO - Pignolo	</a></li>
-                <li><a class="dropdown-item" href="#">CENTRO - S.Alessandro	</a></li>
-                <li><a class="dropdown-item" href="#">CITTA' ALTA	</a></li>
-                <li><a class="dropdown-item" href="#">COLLI</a></li>
-                <li><a class="dropdown-item" href="#">COLOGNOLA</a></li>
-                <li><a class="dropdown-item" href="#">CONCA FIORITA</a></li>
-                <li><a class="dropdown-item" href="#">GRUMELLO</a></li>
-                <li><a class="dropdown-item" href="#">LONGUELO</a></li>
-                <li><a class="dropdown-item" href="#">LORETO</a></li>
-                <li><a class="dropdown-item" href="#">MALPENSATA</a></li>
-                <li><a class="dropdown-item" href="#">MONTEROSSO</a></li>
-                <li><a class="dropdown-item" href="#">REDONA</a></li>
-                <li><a class="dropdown-item" href="#">S.CATERINA</a></li>
-                <li><a class="dropdown-item" href="#">S.LUCIA</a></li>
-                <li><a class="dropdown-item" href="#">S.PAOLO</a></li>
-                <li><a class="dropdown-item" href="#">S.TOMMASO</a></li>
-                <li><a class="dropdown-item" href="#">VALTESSE (S.Colombano) </a></li>     
-                <li><a class="dropdown-item" href="#">VALVERDE - VALTESSE (S.Antonio)</a></li>     
-                <li><a class="dropdown-item" href="#">VILLAGGIO SPOSI</a></li>               
+                <li><a class="dropdown-item" onclick="setQuartiere('BOCCALEONE')">BOCCALEONE</a></li>
+                <li><a class="dropdown-item" onclick="setQuartiere('BORGO PALAZZO')">BORGO PALAZZO</a></li>
+                <li><a class="dropdown-item" onclick="setQuartiere('CAMPAGNOLA')">CAMPAGNOLA</a></li>
+                <li><a class="dropdown-item" onclick="setQuartiere('CARNOVALI')">CARNOVALI</a></li>
+                <li><a class="dropdown-item" onclick="setQuartiere('CELADINA')">CELADINA</a></li>
+                <li><a class="dropdown-item" onclick="setQuartiere('CENTRO - Papa Giovanni XXIII')">CENTRO - Papa Giovanni XXIII</a></li>
+                <li><a class="dropdown-item" onclick="setQuartiere('CENTRO - Pignolo')">CENTRO - Pignolo</a></li>
+                <li><a class="dropdown-item" onclick="setQuartiere('CENTRO - S.Alessandro')">CENTRO - S.Alessandro</a></li>
+                <li><a class="dropdown-item" onclick="setQuartiere('CITTA\' ALTA')">CITTA' ALTA</a></li>
+                <li><a class="dropdown-item" onclick="setQuartiere('COLLI')">COLLI</a></li>
+                <li><a class="dropdown-item" onclick="setQuartiere('COLOGNOLA')">COLOGNOLA</a></li>
+                <li><a class="dropdown-item" onclick="setQuartiere('CONCA FIORITA')">CONCA FIORITA</a></li>
+                <li><a class="dropdown-item" onclick="setQuartiere('GRUMELLO')">GRUMELLO</a></li>
+                <li><a class="dropdown-item" onclick="setQuartiere('LONGUELO')">LONGUELO</a></li>
+                <li><a class="dropdown-item" onclick="setQuartiere('LORETO')">LORETO</a></li>
+                <li><a class="dropdown-item" onclick="setQuartiere('MALPENSATA')">MALPENSATA</a></li>
+                <li><a class="dropdown-item" onclick="setQuartiere('MONTEROSSO')">MONTEROSSO</a></li>
+                <li><a class="dropdown-item" onclick="setQuartiere('REDONA')">REDONA</a></li>
+                <li><a class="dropdown-item" onclick="setQuartiere('S.CATERINA')">S.CATERINA</a></li>
+                <li><a class="dropdown-item" onclick="setQuartiere('S.LUCIA')">S.LUCIA</a></li>
+                <li><a class="dropdown-item" onclick="setQuartiere('S.PAOLO')">S.PAOLO</a></li>
+                <li><a class="dropdown-item" onclick="setQuartiere('S.TOMMASO')">S.TOMMASO</a></li>
+                <li><a class="dropdown-item" onclick="setQuartiere('VALTESSE (S.Colombano)')">VALTESSE (S.Colombano)</a></li>
+                <li><a class="dropdown-item" onclick="setQuartiere('VALVERDE - VALTESSE (S.Antonio)')">VALVERDE - VALTESSE (S.Antonio)</a></li>
+                <li><a class="dropdown-item" onclick="setQuartiere('VILLAGGIO SPOSI')">VILLAGGIO SPOSI</a></li>
               </ul>
             </li>
+            
+            <button class="btn btn-success w-100 mt-3" onclick="AddFilters()">Aggiungi Filtri</button>
+                <!-- Menu a scomparsa con le checkbox -->
+                <div id="filterMenu" style="display: none;">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="filterEta">
+                    <label class="form-check-label" for="filterEta">
+                      Età
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="filterGenere">
+                    <label class="form-check-label" for="filterGenere">
+                      Genere
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="filterQuartiere">
+                    <label class="form-check-label" for="filterQuartiere">
+                      Quartiere
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="filterCittadinanza">
+                    <label class="form-check-label" for="filterCittadinanza">
+                      Cittadinanza
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="filterAnno">
+                    <label class="form-check-label" for="filterAnno">
+                      Anno
+                    </label>
+                  </div>
+                </div>
 
-            <button class="btn btn-danger" onclick="resetFiltri()">Rimuovi Filtri</button>
+            
+                  <button class="btn btn-danger w-100" onclick="resetFiltri()">Rimuovi Filtri</button>
+           
 
           </ul>    
           
